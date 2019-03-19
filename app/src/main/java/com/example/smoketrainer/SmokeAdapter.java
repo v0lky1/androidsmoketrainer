@@ -11,24 +11,24 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MapAdapter extends ArrayAdapter<CounterStrikeMap> {
+public class SmokeAdapter extends ArrayAdapter<Smoke> {
+
     private LayoutInflater inflater;
 
-    public MapAdapter(Context context, List<CounterStrikeMap> objects) {
+    public SmokeAdapter(Context context, List<Smoke> objects) {
         super(context, R.layout.list_item_counterstrikemap, objects);
         inflater = LayoutInflater.from(context);
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.list_item_counterstrikemap, parent, false);
+            convertView = inflater.inflate(R.layout.list_item_smoke, parent, false);
         }
 
-        CounterStrikeMap map = getItem(position);
-        TextView text = convertView.findViewById(R.id.textViewListMap);
-        text.setText(map.getName());
+        Smoke smoke = getItem(position);
+        TextView text = convertView.findViewById(R.id.textViewListSmoke);
+        text.setText(smoke.getTitle());
 
         return convertView;
     }

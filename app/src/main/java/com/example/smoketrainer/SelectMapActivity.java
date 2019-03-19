@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class SelectMapActivity extends AppCompatActivity {
+    public static final String MAP_ID_KEY = "map_id_key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,10 @@ public class SelectMapActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String mapName = MapProvider.getMaps().get(position).getName();
                 Toast.makeText(SelectMapActivity.this, mapName, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(
+
+                Intent intent = new Intent(SelectMapActivity.this, SmokeListActivity.class);
+                intent.putExtra(MAP_ID_KEY, mapName);
+                startActivity(intent);
             }
         });
     }

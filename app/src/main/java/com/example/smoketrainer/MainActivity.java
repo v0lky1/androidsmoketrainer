@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSmokeBrowser() {
-        Intent intent = new Intent(this, SmokeBrowser.class);
+        Intent intent = new Intent(this, SmokeListActivity.class);
         startActivity(intent);
     }
 
     public void openProgressionCheckList() {
-        Intent intent = new Intent(this, ProgressionCheckList.class);
+        Intent intent = new Intent(this, ProgressionCheckListActivity.class);
         startActivity(intent);
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openAddNewSmoke() {
-        Intent intent = new Intent(this, AddNewSmoke.class);
+        Intent intent = new Intent(this, AddNewSmokeActivity.class);
         startActivity(intent);
     }
 }

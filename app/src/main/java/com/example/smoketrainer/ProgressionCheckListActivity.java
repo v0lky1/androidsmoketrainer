@@ -4,10 +4,10 @@ package com.example.smoketrainer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class SmokeBrowser extends AppCompatActivity {
+public class ProgressionCheckListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.smokebrowser);
+        setContentView(R.layout.progressionchecklist);
     }
 }

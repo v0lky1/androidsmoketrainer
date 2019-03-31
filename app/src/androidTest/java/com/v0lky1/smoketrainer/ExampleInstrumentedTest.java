@@ -1,4 +1,4 @@
-package com.example.smoketrainer;
+package com.v0lky1.smoketrainer;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

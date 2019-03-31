@@ -1,4 +1,7 @@
-package com.example.smoketrainer;
+package com.v0lky1.smoketrainer.providers;
+
+import com.v0lky1.smoketrainer.objects.CounterStrikeMap;
+import com.v0lky1.smoketrainer.MapType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +24,9 @@ public class MapProvider {
         return maps;
     }
 
-    public static CounterStrikeMap returnMap(String name){
-        for(CounterStrikeMap map : maps) {
-            if(map.getName().equals(name)) {
+    public static CounterStrikeMap returnMap(String name) {
+        for (CounterStrikeMap map : maps) {
+            if (map.getName().equals(name)) {
                 return map;
             }
         }

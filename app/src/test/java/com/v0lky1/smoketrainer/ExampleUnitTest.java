@@ -1,4 +1,4 @@
-package com.example.smoketrainer;
+package com.v0lky1.smoketrainer;
 
 import org.junit.Test;
 

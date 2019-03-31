@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.smoketrainer">
+    package="com.v0lky1.smoketrainer">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,17 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-x        <activity android:name=".MainActivity">
+x        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SmokeListActivity" />
-        <activity android:name=".SelectMapActivity" />
-        <activity android:name=".ProgressionCheckListActivity" />
-        <activity android:name=".AddNewSmokeActivity" />
+        <activity android:name=".activities.SmokeListActivity"
+            android:label=""/>
+        <activity android:name=".activities.SelectMapActivity"
+            android:label="select map"/>
+        <activity android:name=".activities.AddNewSmokeActivity"
+            android:label="add new smoke"/>
 
     </application>
 

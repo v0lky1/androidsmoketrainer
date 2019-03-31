@@ -1,13 +1,12 @@
-package com.example.smoketrainer;
+package com.v0lky1.smoketrainer.objects;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.v0lky1.smoketrainer.MapType;
 
 public class CounterStrikeMap {
     private MapType mapType;
     private String name;
 
-    public CounterStrikeMap (String name, MapType mapType){
+    public CounterStrikeMap(String name, MapType mapType) {
         this.mapType = mapType;
         this.name = name;
     }

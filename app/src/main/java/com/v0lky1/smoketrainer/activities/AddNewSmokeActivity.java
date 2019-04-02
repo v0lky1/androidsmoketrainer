@@ -50,7 +50,7 @@ public class AddNewSmokeActivity extends AppCompatActivity {
 
        Intent sendBackIntent = new Intent(this, SmokeListActivity.class);
         sendBackIntent.putExtra(CURRENT_MAP_KEY, name);
-        startActivity(sendBackIntent);
-        //TODO: go back to list instead of prev, prev, prev (after adding several smokes)
+        setResult(RESULT_OK, sendBackIntent);
+        finish();
     }
 }

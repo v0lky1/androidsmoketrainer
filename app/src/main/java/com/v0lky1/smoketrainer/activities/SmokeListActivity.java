@@ -4,6 +4,7 @@ package com.v0lky1.smoketrainer.activities;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
@@ -21,9 +22,12 @@ import com.v0lky1.smoketrainer.providers.SmokeProvider;
 import java.util.List;
 
 public class SmokeListActivity extends AppCompatActivity {
+    private SmokeAdapter adapter;
 
+    public static final int REQ_ADD_SMOKE = 0;
 
     private class CounterStrikeSmokeWebView extends WebViewClient {
+
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -37,7 +41,6 @@ public class SmokeListActivity extends AppCompatActivity {
         setContentView(R.layout.smokelist_activity);
         ListView lv = findViewById(R.id.listViewSmoke);
 
-
         String name = getIntent().getExtras().getString(SelectMapActivity.CURRENT_MAP_KEY);
         CounterStrikeMap map = MapProvider.returnMap(name);
         setTitle(map.getName().toUpperCase());
@@ -49,7 +52,7 @@ public class SmokeListActivity extends AppCompatActivity {
         wb.getSettings();
         wb.setBackgroundColor(Color.TRANSPARENT);
 
-        SmokeAdapter adapter = new SmokeAdapter(this, smokes);
+        adapter = new SmokeAdapter(this, smokes);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,11 +70,19 @@ public class SmokeListActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQ_ADD_SMOKE && resultCode == RESULT_OK && data != null) {
+            String temp = data.getStringExtra(SelectMapActivity.CURRENT_MAP_KEY);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
     public void clickHandler(View view) {
         String map = getIntent().getExtras().getString(SelectMapActivity.CURRENT_MAP_KEY);
 
         Intent intent = new Intent(this, AddNewSmokeActivity.class);
         intent.putExtra(SelectMapActivity.CURRENT_MAP_KEY, map);
-        startActivity(intent);
+        startActivityForResult(intent, REQ_ADD_SMOKE);
     }
 }

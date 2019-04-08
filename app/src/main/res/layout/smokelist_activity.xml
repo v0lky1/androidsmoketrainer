@@ -12,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="299dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,7 +22,7 @@
     <ListView
         android:id="@+id/listViewSmoke"
         android:layout_width="0dp"
-        android:layout_height="385dp"
+        android:layout_height="326dp"
         android:scrollbars="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

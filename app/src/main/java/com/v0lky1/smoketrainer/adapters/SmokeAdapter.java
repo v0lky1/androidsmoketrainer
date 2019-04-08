@@ -10,13 +10,17 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.v0lky1.smoketrainer.R;
+import com.v0lky1.smoketrainer.views.CheckMarkViews;
 import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.views.ClickCounterView;
+
 
 import java.util.List;
 
 public class SmokeAdapter extends ArrayAdapter<Smoke> {
 
     private LayoutInflater inflater;
+
 
     public SmokeAdapter(Context context, List<Smoke> objects) {
         super(context, R.layout.list_item_counterstrikemap, objects);
@@ -32,7 +36,13 @@ public class SmokeAdapter extends ArrayAdapter<Smoke> {
 
         Smoke smoke = getItem(position);
         TextView text = convertView.findViewById(R.id.textViewListSmoke);
+        CheckMarkViews checkMarkViews = convertView.findViewById(R.id.checkMarkViews);
+        ClickCounterView clickCounterView = convertView.findViewById(R.id.clickCounterView);
+        checkMarkViews.currentSmoke(smoke);
+        clickCounterView.currentSmoke(smoke);
         text.setText(smoke.getTitle());
+        clickCounterView.setText(smoke.getSeenCounter() + "");
+
 
         return convertView;
     }

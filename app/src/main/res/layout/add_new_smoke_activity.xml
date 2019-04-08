@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextURL"
+        android:id="@+id/editTextMapName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/editTextLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextURL" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMapName" />
 
     <TextView
         android:id="@+id/textView6"
@@ -35,9 +32,9 @@
         android:layout_marginEnd="8dp"
         android:text="URL:"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextURL"
-        app:layout_constraintEnd_toStartOf="@+id/editTextURL"
-        app:layout_constraintTop_toTopOf="@+id/editTextURL" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextMapName"
+        app:layout_constraintEnd_toStartOf="@+id/editTextMapName"
+        app:layout_constraintTop_toTopOf="@+id/editTextMapName" />
 
     <TextView
         android:id="@+id/textView7"
@@ -56,7 +53,6 @@
         android:layout_height="231dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
         app:srcCompat="@mipmap/smoke_trainer" />
 
     <ImageView
@@ -69,4 +65,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLocation"
         app:srcCompat="@drawable/send_circle_outline" />
+
+    <ImageView
+        android:id="@+id/deleteSmokeButton"
+        android:onClick="deleteSmokeHandler"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 </android.support.constraint.ConstraintLayout>

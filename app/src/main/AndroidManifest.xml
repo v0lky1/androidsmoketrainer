@@ -25,6 +25,7 @@
             android:label="select map"/>
         <activity android:name=".activities.AddNewSmokeActivity"
             android:label="add new smoke"/>
+        <activity android:name=".activities.CreateMapActivity" />
 
     </application>
 

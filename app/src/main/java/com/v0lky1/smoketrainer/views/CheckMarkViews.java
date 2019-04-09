@@ -62,17 +62,18 @@ public class CheckMarkViews extends View {
         blackPaint.setStrokeWidth(10f);
         redPaint.setStrokeWidth(7f);
 
-            if (smoke.isSeen()) {
-                //draws green checkmark
-                canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, blackPaint);
-                canvas.drawLine(0.5f * width, 0.7f * height, width, 0.35f, blackPaint);
-                canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, greenPaint);
-                canvas.drawLine(0.5f * width, 0.7f * height, width, 0.35f, greenPaint);
-            }
-            else if (!smoke.isSeen()) {
-                //draw red cross
-                canvas.drawLine(0, 0, width, height, redPaint);
-                canvas.drawLine(width, 0, 0, height, redPaint);
-            }
+        if (smoke.isSeen()) {
+            //draws green checkmark
+            canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, blackPaint);
+            canvas.drawLine(0.5f * width, 0.7f * height, width, 0.15f *height , blackPaint);
+            canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, greenPaint);
+            canvas.drawLine(0.5f * width, 0.7f * height, width, 0.15f *height, greenPaint);
+        } else if (!smoke.isSeen()) {
+            //draw red cross
+            canvas.drawLine(0.25f * width, 0.25f * height, 0.75f * width, 0.75f * height, blackPaint);
+            canvas.drawLine(0.25f * width, 0.75f * height, 0.75f * width, 0.25f * height, blackPaint);
+            canvas.drawLine(0.25f * width, 0.25f * height, 0.75f * width, 0.75f * height, redPaint);
+            canvas.drawLine(0.25f * width, 0.75f * height, 0.75f * width, 0.25f * height, redPaint);
         }
     }
+}

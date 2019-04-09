@@ -32,13 +32,15 @@ public class MapProvider {
         return maps;
     }
 
-    public static CounterStrikeMap returnMap(String name) {
-        for (CounterStrikeMap map : maps) {
-            if (map.getName().equals(name)) {
+    public static CounterStrikeMap returnById(int id) {
+        for(CounterStrikeMap map: maps) {
+            if(map.getMapId() == id) {
                 return map;
             }
         }
-        // cant happen if input is correct
         return null;
+    }
+    public static void removeCounterStrikeMap(CounterStrikeMap csMap){
+        maps.remove(csMap);
     }
 }

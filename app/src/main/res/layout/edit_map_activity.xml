@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +13,6 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_chainStyle="packed" />
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="Mapname:"
+        android:text="@string/mapname"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextMapName"
         app:layout_constraintEnd_toStartOf="@+id/editTextMapName"
@@ -37,14 +37,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/smoke_trainer" />
 
-    <ImageView
-        android:id="@+id/imageViewSendSmoke"
-        android:layout_width="57dp"
-        android:layout_height="62dp"
+    <Button
+        android:id="@+id/buttonAddMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:onClick="sendAddMapHandler"
+        android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMapName"
-        app:srcCompat="@drawable/send_circle_outline" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMapName" />
+
+    <Button
+        android:id="@+id/removeMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="deleteMapHandler"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddMap"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMapName" />
 </android.support.constraint.ConstraintLayout>

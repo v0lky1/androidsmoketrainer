@@ -2,14 +2,10 @@ package com.v0lky1.smoketrainer.activities;
 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.v0lky1.smoketrainer.adapters.MapAdapter;
@@ -44,10 +40,22 @@ public class SelectMapActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String mapName = MapProvider.getMaps().get(position).getName();
+                Intent intent = new Intent(SelectMapActivity.this, EditMapActivity.class);
+                intent.putExtra(CURRENT_MAP_KEY, mapName);
+                finish();
+                startActivity(intent);
+                return true;
+            }
+        });
     }
 
     public void AddMapHandler(View view) {
-        Intent intent = new Intent(this, CreateMapActivity.class);
+        Intent intent = new Intent(this, EditMapActivity.class);
         startActivity(intent);
     }
 

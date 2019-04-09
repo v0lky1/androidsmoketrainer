@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmokeTrainer</string>
+    <string name="url">Link</string>
+    <string name="location">Locatie</string>
+    <string name="mapname">Mapnaam</string>
+    <string name="add">Voeg toe</string>
+    <string name="click_logo_to_start">Klik op het logo om te starten</string>
+</resources>

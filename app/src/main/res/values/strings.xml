@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SmokeTrainer</string>
+    <string name="url">URL:</string>
+    <string name="location">LOCATION:</string>
+    <string name="mapname">Mapname:</string>
+    <string name="add">add</string>
+    <string name="click_logo_to_start">Click logo to start!</string>
+    <string name="delete">Delete</string>
 </resources>

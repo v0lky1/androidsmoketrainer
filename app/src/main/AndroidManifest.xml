@@ -22,10 +22,13 @@
         <activity android:name=".activities.SmokeListActivity"
             android:label=""/>
         <activity android:name=".activities.SelectMapActivity"
+            android:screenOrientation="portrait"
             android:label="select map"/>
-        <activity android:name=".activities.AddNewSmokeActivity"
+        <activity android:name=".activities.EditSmokeActivity"
+            android:screenOrientation="portrait"
             android:label="add new smoke"/>
-        <activity android:name=".activities.CreateMapActivity" />
+        <activity android:name=".activities.EditMapActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

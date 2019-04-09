@@ -6,9 +6,15 @@ import java.util.List;
 public class CounterStrikeMap {
     private List<Smoke> smokes = new ArrayList<>();
     private String name;
+    private int mapId;
+    private int mapCounter;
 
     public CounterStrikeMap(String name) {
         this.name = name;
+        mapId = ++mapCounter;
+    }
+
+    public CounterStrikeMap(){
     }
 
     public void addSmoke(Smoke smoke) {
@@ -32,6 +38,13 @@ public class CounterStrikeMap {
         return null;
     }
 
+    public int getMapId() {
+        return mapId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 

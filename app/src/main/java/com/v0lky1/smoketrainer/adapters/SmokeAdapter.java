@@ -41,7 +41,7 @@ public class SmokeAdapter extends ArrayAdapter<Smoke> {
         checkMarkViews.currentSmoke(smoke);
         clickCounterView.currentSmoke(smoke);
         text.setText(smoke.getTitle());
-        clickCounterView.setText(smoke.getSeenCounter() + "");
+        clickCounterView.setText(String.valueOf(smoke.getSeenCounter()));
 
 
         return convertView;

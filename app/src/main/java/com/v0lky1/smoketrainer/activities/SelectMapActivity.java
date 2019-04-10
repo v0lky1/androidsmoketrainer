@@ -33,10 +33,10 @@ public class SelectMapActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String mapName = MapProvider.getMaps().get(position).getName();
+                int mapId = MapProvider.getMaps().get(position).getMapId();
 
                 Intent intent = new Intent(SelectMapActivity.this, SmokeListActivity.class);
-                intent.putExtra(CURRENT_MAP_KEY, mapName);
+                intent.putExtra(CURRENT_MAP_KEY, mapId);
                 startActivity(intent);
             }
         });
@@ -44,10 +44,9 @@ public class SelectMapActivity extends AppCompatActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String mapName = MapProvider.getMaps().get(position).getName();
+                int mapId = MapProvider.getMaps().get(position).getMapId();
                 Intent intent = new Intent(SelectMapActivity.this, EditMapActivity.class);
-                intent.putExtra(CURRENT_MAP_KEY, mapName);
-                finish();
+                intent.putExtra(CURRENT_MAP_KEY, mapId);
                 startActivity(intent);
                 return true;
             }

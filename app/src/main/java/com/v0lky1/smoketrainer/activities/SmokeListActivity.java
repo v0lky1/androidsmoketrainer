@@ -19,6 +19,8 @@ import com.v0lky1.smoketrainer.providers.MapProvider;
 
 import java.util.List;
 
+import static com.v0lky1.smoketrainer.activities.SelectMapActivity.CURRENT_MAP_KEY;
+
 public class SmokeListActivity extends AppCompatActivity {
     private SmokeAdapter adapter;
     public static String CURRENT_SMOKE_KEY = "smoke_key";
@@ -33,7 +35,7 @@ public class SmokeListActivity extends AppCompatActivity {
         final WebView wb = findViewById(R.id.webView1);
         wb.loadUrl("about: blank");
 
-        final int mapId = getIntent().getIntExtra(SelectMapActivity.CURRENT_MAP_KEY, -1);
+        final int mapId = getIntent().getIntExtra(CURRENT_MAP_KEY, -1);
         CounterStrikeMap map = MapProvider.returnById(mapId);
 
         final List<Smoke> smokes = map.getSmokes();
@@ -50,7 +52,7 @@ public class SmokeListActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SmokeListActivity.this, EditSmokeActivity.class);
-                intent.putExtra(SelectMapActivity.CURRENT_MAP_KEY, mapId);
+                intent.putExtra(CURRENT_MAP_KEY, mapId);
                 intent.putExtra(CURRENT_SMOKE_KEY, smokes.get(position).getSmokeId());
                 finish();
                 startActivity(intent);
@@ -60,9 +62,9 @@ public class SmokeListActivity extends AppCompatActivity {
     }
 
     public void clickHandler(View view) {
-        String map = getIntent().getStringExtra(SelectMapActivity.CURRENT_MAP_KEY);
+        int mapId = getIntent().getIntExtra(CURRENT_MAP_KEY, -1);
         Intent intent = new Intent(this, EditSmokeActivity.class);
-        intent.putExtra(SelectMapActivity.CURRENT_MAP_KEY, map);
+        intent.putExtra(CURRENT_MAP_KEY, mapId);
         finish();
         startActivity(intent);
     }

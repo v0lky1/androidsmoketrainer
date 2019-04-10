@@ -7,7 +7,7 @@ public class CounterStrikeMap {
     private List<Smoke> smokes = new ArrayList<>();
     private String name;
     private int mapId;
-    private int mapCounter;
+    private static int mapCounter;
 
     public CounterStrikeMap(String name) {
         this.name = name;
@@ -15,6 +15,7 @@ public class CounterStrikeMap {
     }
 
     public CounterStrikeMap(){
+        mapId = ++mapCounter;
     }
 
     public void addSmoke(Smoke smoke) {

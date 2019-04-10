@@ -52,7 +52,7 @@ public class EditSmokeActivity extends AppCompatActivity {
         //we know our smokes exists.
 
         if (smokeId != -1 && mapId != -1) {
-            //return map with param string since we know it exists
+            //return map with param mapid since we know it exists
             map = MapProvider.returnById(mapId);
             //assign our instance smoke by id since we know it exists
             smoke = MapProvider.returnById(mapId).getSmokeById(smokeId);
@@ -78,7 +78,7 @@ public class EditSmokeActivity extends AppCompatActivity {
     public void sendAddSmokeHandler(View view) {
         //getting intent from smokelistactivity
         Intent intent = getIntent();
-        //getting mapname
+        //getting mapid
         int mapId = intent.getIntExtra(CURRENT_MAP_KEY, -1);
         //returning map with string param name
         CounterStrikeMap map = MapProvider.returnById(mapId);
@@ -110,7 +110,7 @@ public class EditSmokeActivity extends AppCompatActivity {
         //we're done here, sending us back to the smokelistactivity.
         Intent intent = new Intent(this, SmokeListActivity.class);
         //we need to know what smokes to show and we're starting the activity properly.
-        intent.putExtra(CURRENT_MAP_KEY, map.getName());
+        intent.putExtra(CURRENT_MAP_KEY, map.getMapId());
         finish();
         startActivity(intent);
     }

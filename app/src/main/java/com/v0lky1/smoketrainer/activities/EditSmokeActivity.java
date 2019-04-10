@@ -98,8 +98,8 @@ public class EditSmokeActivity extends AppCompatActivity {
         if (newSmoke) {
             smokes.add(smoke);
         }
-        //shows a toast message with a happy message
         Toast.makeText(this, "Smoke has been added :)", Toast.LENGTH_SHORT).show();
+        //shows a toast message with a happy message
         finish();
     }
 

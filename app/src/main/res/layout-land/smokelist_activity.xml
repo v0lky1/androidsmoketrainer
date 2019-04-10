@@ -9,7 +9,7 @@
 
     <WebView
         android:id="@+id/webView1"
-        android:layout_width="444dp"
+        android:layout_width="446dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,22 +19,34 @@
     <ListView
         android:id="@+id/listViewSmoke"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="361dp"
         android:scrollbars="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/webView1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/webView1" />
 
     <ImageView
         android:id="@+id/imageViewAddSmoke"
-        android:onClick="clickHandler"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/plus_circle" />
+        android:onClick="clickHandler"
+        app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
+        app:srcCompat="@drawable/plus_circle"
+        tools:layout_editor_absoluteX="681dp" />
+
+    <TextView
+        android:id="@+id/mapNameTextVIew"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="15dp"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewAddSmoke"
+        app:layout_constraintStart_toEndOf="@+id/webView1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

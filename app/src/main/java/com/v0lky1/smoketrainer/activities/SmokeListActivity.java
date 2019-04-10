@@ -9,6 +9,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.v0lky1.smoketrainer.compoundcontrollers.SmokeController;
 import com.v0lky1.smoketrainer.objects.CounterStrikeMap;
@@ -32,6 +33,7 @@ public class SmokeListActivity extends AppCompatActivity {
         setContentView(R.layout.smokelist_activity);
 
         ListView lv = findViewById(R.id.listViewSmoke);
+        TextView tv = findViewById(R.id.mapNameTextVIew);
         final WebView wb = findViewById(R.id.webView1);
         wb.loadUrl("about: blank");
 
@@ -46,6 +48,7 @@ public class SmokeListActivity extends AppCompatActivity {
 
         adapter = new SmokeAdapter(this, smokes);
         lv.setAdapter(adapter);
+        tv.setText(map.getName());
 
         lv.setOnItemClickListener(new SmokeController(smokes, wb));
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -65,7 +68,6 @@ public class SmokeListActivity extends AppCompatActivity {
         int mapId = getIntent().getIntExtra(CURRENT_MAP_KEY, -1);
         Intent intent = new Intent(this, EditSmokeActivity.class);
         intent.putExtra(CURRENT_MAP_KEY, mapId);
-        finish();
         startActivity(intent);
     }
 

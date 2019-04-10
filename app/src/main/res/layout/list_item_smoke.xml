@@ -8,35 +8,26 @@
     <TextView
         android:id="@+id/textViewListSmoke"
         android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="34dp"
         android:text="TextView"
         android:textAlignment="viewStart"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/checkMarkViews"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/checkMarkViews"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.v0lky1.smoketrainer.views.CheckMarkViews
         android:id="@+id/checkMarkViews"
-        android:layout_width="63dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/clickCounterView"
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.v0lky1.smoketrainer.views.ClickCounterView
         android:id="@+id/clickCounterView"
         android:layout_width="37dp"
         android:layout_height="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="ClickCounter"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewListSmoke"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

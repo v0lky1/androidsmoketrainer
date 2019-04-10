@@ -7,37 +7,55 @@
     android:layout_height="match_parent">
 
 
+    <TextView
+        android:id="@+id/mapNameTextVIew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="23dp"
+        android:text="Mapname"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewAddSmoke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView1" />
+
     <WebView
         android:id="@+id/webView1"
         android:layout_width="0dp"
         android:layout_height="299dp"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </WebView>
 
     <ListView
         android:id="@+id/listViewSmoke"
         android:layout_width="0dp"
-        android:layout_height="326dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:scrollbars="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/webView1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAddSmoke"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageViewAddSmoke"
-        android:onClick="clickHandler"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:onClick="clickHandler"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView1"
         app:srcCompat="@drawable/plus_circle" />
 
 </android.support.constraint.ConstraintLayout>

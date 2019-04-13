@@ -1,13 +1,13 @@
-package com.v0lky1.smoketrainer.objects;
+package com.v0lky1.smoketrainer.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CounterStrikeMap {
+    private static int mapCounter;
     private List<Smoke> smokes = new ArrayList<>();
     private String name;
     private int mapId;
-    private static int mapCounter;
 
     public CounterStrikeMap(String name) {
         this.name = name;

@@ -22,7 +22,6 @@ public class SelectMapActivity extends AppCompatActivity {
         setContentView(R.layout.selectmap_activity);
 
 
-
         ListView lv = findViewById(R.id.mapList);
 
         adapter = new MapAdapter(this, MapProvider.getMaps());

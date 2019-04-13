@@ -12,9 +12,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.v0lky1.smoketrainer.compoundcontrollers.SmokeController;
-import com.v0lky1.smoketrainer.objects.CounterStrikeMap;
+import com.v0lky1.smoketrainer.models.CounterStrikeMap;
 import com.v0lky1.smoketrainer.R;
-import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.models.Smoke;
 import com.v0lky1.smoketrainer.adapters.SmokeAdapter;
 import com.v0lky1.smoketrainer.providers.MapProvider;
 
@@ -57,7 +57,6 @@ public class SmokeListActivity extends AppCompatActivity {
                 Intent intent = new Intent(SmokeListActivity.this, EditSmokeActivity.class);
                 intent.putExtra(CURRENT_MAP_KEY, mapId);
                 intent.putExtra(CURRENT_SMOKE_KEY, smokes.get(position).getSmokeId());
-                finish();
                 startActivity(intent);
                 return true;
             }

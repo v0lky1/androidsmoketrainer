@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.v0lky1.smoketrainer.R;
 import com.v0lky1.smoketrainer.views.CheckMarkViews;
-import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.models.Smoke;
 import com.v0lky1.smoketrainer.views.ClickCounterView;
 
 

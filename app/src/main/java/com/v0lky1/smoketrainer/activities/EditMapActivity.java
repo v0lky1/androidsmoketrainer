@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.v0lky1.smoketrainer.R;
-import com.v0lky1.smoketrainer.objects.CounterStrikeMap;
+import com.v0lky1.smoketrainer.models.CounterStrikeMap;
 import com.v0lky1.smoketrainer.providers.MapProvider;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.v0lky1.smoketrainer.objects;
+package com.v0lky1.smoketrainer.models;
 
 public class Smoke {
 

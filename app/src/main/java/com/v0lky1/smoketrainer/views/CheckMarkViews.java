@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.models.Smoke;
 
 public class CheckMarkViews extends View {
     Paint greenPaint;

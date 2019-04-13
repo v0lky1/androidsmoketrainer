@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.v0lky1.smoketrainer.objects.CounterStrikeMap;
+import com.v0lky1.smoketrainer.models.CounterStrikeMap;
 import com.v0lky1.smoketrainer.R;
 
 import java.util.List;

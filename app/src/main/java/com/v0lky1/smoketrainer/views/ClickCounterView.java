@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
-import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.models.Smoke;
 
 public class ClickCounterView extends android.support.v7.widget.AppCompatTextView {
     private Smoke smoke;

@@ -4,10 +4,9 @@ import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
-import android.widget.EditText;
 
 import com.v0lky1.smoketrainer.R;
-import com.v0lky1.smoketrainer.objects.Smoke;
+import com.v0lky1.smoketrainer.models.Smoke;
 import com.v0lky1.smoketrainer.views.CounterStrikeSmokeWebView;
 
 import java.util.List;

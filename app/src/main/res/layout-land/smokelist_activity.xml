@@ -31,11 +31,11 @@
         android:layout_height="50dp"
         android:onClick="clickHandler"
         app:layout_constraintBottom_toTopOf="@+id/listViewSmoke"
-        app:srcCompat="@drawable/plus_circle"
-        tools:layout_editor_absoluteX="681dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <TextView
-        android:id="@+id/mapNameTextVIew"
+        android:id="@+id/mapNameTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"

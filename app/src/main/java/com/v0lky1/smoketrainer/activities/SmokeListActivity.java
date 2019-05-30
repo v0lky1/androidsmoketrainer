@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -26,14 +28,25 @@ public class SmokeListActivity extends AppCompatActivity {
     private SmokeAdapter adapter;
     public static String CURRENT_SMOKE_KEY = "smoke_key";
 
+    /**
+     * Laad de webview in en daarnaast luistert hij naar eventuele onclicks door gebruik
+     * te maken van de SmokeController class. Hij heeft ook een longclick item listener die
+     * de EditSmokeActivity zal starten.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //scherm altijd aan omdat de app paraat moet staan snel een smoke te laten zien (je gebruikt de app tijdens het spelen)
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.smokelist_activity);
 
+
         ListView lv = findViewById(R.id.listViewSmoke);
-        TextView tv = findViewById(R.id.mapNameTextVIew);
+        TextView tv = findViewById(R.id.mapNameTextView);
         final WebView wb = findViewById(R.id.webView1);
         wb.loadUrl("about: blank");
 
@@ -63,6 +76,10 @@ public class SmokeListActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Opent een lege EditSmokeActivity.
+     * @param view
+     */
     public void clickHandler(View view) {
         int mapId = getIntent().getIntExtra(CURRENT_MAP_KEY, -1);
         Intent intent = new Intent(this, EditSmokeActivity.class);
@@ -70,7 +87,9 @@ public class SmokeListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    /**
+     * Controleert of er iets is toegevoegd bij het hervatten van deze activiteit.
+     */
     @Override
     protected void onResume() {
         super.onResume();

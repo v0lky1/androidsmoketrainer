@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/mapNameTextVIew"
+        android:id="@+id/mapNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -56,6 +56,6 @@
         android:onClick="clickHandler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/webView1"
-        app:srcCompat="@drawable/plus_circle" />
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 </android.support.constraint.ConstraintLayout>

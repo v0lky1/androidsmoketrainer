@@ -33,14 +33,11 @@ public class SmokeController implements AdapterView.OnItemClickListener {
         wb.loadUrl(smokes.get(position).getUrl());
         smokes.get(position).setSeen(true);
 
-        //counts amount of clicks
+
         int seenCounter = smokes.get(position).getSeenCounter() + 1;
-        smokes.get(position).setSeenCounter(seenCounter++);
+        smokes.get(position).setSeenCounter(seenCounter);
 
-        // We hebben op een item geclicked, dus zorg ervoor dat de checkmarkview zich
-        // opnieuw tekent.
-
-        //
+        //hertekenen van het listitem
         ((ConstraintLayout) view).getViewById(R.id.checkMarkViews).invalidate();
         ((ConstraintLayout) view).getViewById(R.id.clickCounterView).invalidate();
     }

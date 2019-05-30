@@ -38,6 +38,10 @@ public class SmokeAdapter extends ArrayAdapter<Smoke> {
         TextView text = convertView.findViewById(R.id.textViewListSmoke);
         CheckMarkViews checkMarkViews = convertView.findViewById(R.id.checkMarkViews);
         ClickCounterView clickCounterView = convertView.findViewById(R.id.clickCounterView);
+
+
+        //stuurt de smokes door zodat de views weten wat voor gedrag zij moeten vertonen
+
         checkMarkViews.currentSmoke(smoke);
         clickCounterView.currentSmoke(smoke);
         text.setText(smoke.getTitle());

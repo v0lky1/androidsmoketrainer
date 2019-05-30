@@ -11,10 +11,10 @@ import android.view.View;
 import com.v0lky1.smoketrainer.models.Smoke;
 
 public class CheckMarkViews extends View {
-    Paint greenPaint;
-    Paint blackPaint;
-    Paint redPaint;
-    Smoke smoke;
+    private Paint greenPaint;
+    private Paint blackPaint;
+    private Paint redPaint;
+    private Smoke smoke;
 
     public CheckMarkViews(Context context) {
         super(context);
@@ -63,13 +63,13 @@ public class CheckMarkViews extends View {
         redPaint.setStrokeWidth(7f);
 
         if (smoke.isSeen()) {
-            //draws green checkmark
+            //tekend een vinkje
             canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, blackPaint);
             canvas.drawLine(0.5f * width, 0.7f * height, width, 0.15f *height , blackPaint);
             canvas.drawLine(0.25f * width, 0.4f * height, 0.5f * width, 0.7f * height, greenPaint);
             canvas.drawLine(0.5f * width, 0.7f * height, width, 0.15f *height, greenPaint);
         } else if (!smoke.isSeen()) {
-            //draw red cross
+            //tekend een rood kruis
             canvas.drawLine(0.25f * width, 0.25f * height, 0.75f * width, 0.75f * height, blackPaint);
             canvas.drawLine(0.25f * width, 0.75f * height, 0.75f * width, 0.25f * height, blackPaint);
             canvas.drawLine(0.25f * width, 0.25f * height, 0.75f * width, 0.75f * height, redPaint);

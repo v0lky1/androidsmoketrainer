@@ -30,8 +30,8 @@ public class MapAdapter extends ArrayAdapter<CounterStrikeMap> {
         }
 
         CounterStrikeMap map = getItem(position);
-        TextView text = convertView.findViewById(R.id.textViewListMap);
-        text.setText(map.getName());
+        TextView tv = convertView.findViewById(R.id.textViewListMap);
+        tv.setText(map.getName());
 
         return convertView;
     }

@@ -40,7 +40,7 @@ public class MapProvider {
     }
 
     /**
-     * returned maps
+     * returned maps b
      * @return
      */
     public static List<CounterStrikeMap> getMaps() {
@@ -48,7 +48,7 @@ public class MapProvider {
     }
 
     /**
-     * 
+     * Returned de map met meegegeven ID.
      * @param id
      * @return
      */

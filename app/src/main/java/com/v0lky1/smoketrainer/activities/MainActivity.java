@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -15,10 +17,17 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView logo;
 
+    /**
+     * het startpunt van de app. Als je op het logo klikt word je verwezen naar het map selectie scherm.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //intiele settings voor de app. Zorgt voor fullscreen gedrag.
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         logo = findViewById(R.id.imageViewSmokeTrainer);
@@ -27,14 +36,9 @@ public class MainActivity extends AppCompatActivity {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectMap();
+                Intent intent = new Intent(MainActivity.this, SelectMapActivity.class);
+                startActivity(intent);
             }
         });
-    }
-
-    public void openSelectMap() {
-        Intent intent = new Intent(this, SelectMapActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Logo courtesy of Rezji", Toast.LENGTH_SHORT).show();
     }
 }
